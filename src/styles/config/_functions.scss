@@ -1,0 +1,88 @@
+@function ltco_color($key: "primary") {
+  @return map-get($ltco-colors, $key);
+}
+
+%triade-grid {
+  display: grid;
+  gap: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    gap: 3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+%backgroundCover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%fullPosition {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+%ctaContainer {
+  overflow: hidden;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+
+      .ltco_button {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  p {
+    color: ltco_color('white');
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+}
+
+%triadeWrapper {
+  .row-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      > * {
+        max-width: calc(50% - 0.5rem);
+      }
+    }
+  }
+}

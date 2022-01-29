@@ -1,0 +1,73 @@
+.carousel-item {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+
+  @include media-breakpoint-up(lg) {
+    height: 380px;
+  }
+
+  &.img-ref {
+    background-image: url('#{$ltco_path_images}/carousel-bg.jpg');
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.carousel-caption {
+
+  &:before {
+    content: '';
+    background-color: ltco_color('black');
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.3;
+    filter: blur(40px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+    right: initial;
+    max-width: 400px;
+    text-align: left;
+  }
+
+  .content {
+    @include media-breakpoint-down(md) {
+      max-width: 400px;
+      margin: 0 auto 1rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 2rem;
+      @include font-size(20px);
+    }
+  }
+}
+
+.carousel-indicators {
+  li {
+    background-color: ltco_color('gray-900');
+    @include transition($transition-base);
+
+    &:hover,
+    &.active {
+      background-color: ltco_color();
+    }
+
+    &.active {
+      width: 50px;
+    }
+  }
+}

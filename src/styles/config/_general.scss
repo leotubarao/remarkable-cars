@@ -1,0 +1,131 @@
+*::selection {
+  background-color: ltco_color();
+  color: ltco_color('white');
+}
+
+/* $ltco_size: 13px;
+
+body {
+  @include font-size($ltco_size);
+} */
+
+#root {
+  position: relative;
+}
+
+main.ltco_main {
+  background-color: ltco_color('white');
+  position: relative;
+  min-height: 200px;
+}
+
+.line-after {
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    &:after {
+      content: '';
+      max-width: 100%;
+      min-width: 100px;
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+      flex-grow: 1;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.list_style_ltco {
+  list-style: none;
+  padding-left: 1.5rem;
+
+  li:before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: ltco_color();
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+
+.ltco_feature_highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    padding-left: 0;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    @include transition($transition-base);
+
+    &:before {
+      content: '';
+      width: 16px;
+      height: 9px;
+      transform: translate(0px, -9px) rotate(-45deg);
+      background-color: transparent;
+      box-shadow: -4px 4px 0 ltco_color();
+      z-index: -1;
+    }
+  }
+}
+
+.hidden-b {
+  overflow: hidden;
+}
+
+.ltco_btn_back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  padding-left: 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  @include transition($transition-base);
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: translateX(6px) rotate(-45deg);
+    background-color: transparent;
+    box-shadow: -4px -4px 0 ltco_color();
+    z-index: -1;
+  }
+}
+
+.ltco_error {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
+.error404 #root {
+  height: 100vh;
+  display: flex;
+
+  .wrapper-error {
+    text-align: center;
+  }
+}
+
+.wp-block-image img {
+  @extend .img-fluid;
+}

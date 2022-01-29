@@ -1,0 +1,15 @@
+.ltco_feature_cars {
+  .badge {
+    color: ltco_color('gray-900');
+    border: 1px solid currentColor;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+    cursor: default;
+
+    &:hover {
+      background-color: ltco_color('gray-900');
+      color: ltco_color('white');
+    }
+  }
+}

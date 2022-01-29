@@ -1,0 +1,86 @@
+.home {
+  .ltco_triade {
+    > * {
+      justify-content: center;
+
+      @include media-breakpoint-up(lg) {
+        justify-content: space-between;
+      }
+    }
+
+    article {
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      hr {
+        width: 100%;
+        margin-top: auto;
+      }
+    }
+
+    &__heading {
+      border-top: 8px solid currentColor;
+      padding-top: 1rem;
+      color: ltco_color('green-300');
+
+      &.lighten {
+        color: ltco_color('green-200');
+      }
+
+      &.darken {
+        color: ltco_color('green-500');
+      }
+    }
+  }
+
+  .ltco_sustentability {
+    background-color: ltco_color('green-500');
+    background-image: url('#{$ltco_path_images}/sustentability-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      min-height: 400px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      min-height: 500px;
+    }
+
+    > * {
+      margin: auto;
+    }
+
+    &__content {
+      max-width: 450px;
+      padding: 1.5rem 0;
+      color: ltco_color('white');
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        content: '';
+        background-color: ltco_color('black');
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.3;
+        filter: blur(40px);
+      }
+
+      &__heading,
+      p {
+        color: currentColor;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

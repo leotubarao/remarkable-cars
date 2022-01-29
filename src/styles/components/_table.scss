@@ -1,0 +1,18 @@
+.ltco_table {
+  border-top: 0.5rem solid ltco_color('tertiary');
+
+  tr {
+    border-bottom: 1px solid ltco_color('gray-500');
+  }
+
+  td {
+    padding: 1rem;
+
+    &:first-child {
+      padding-left: 1rem;
+    }
+    &:last-child {
+      padding-right: 1rem;
+    }
+  }
+}

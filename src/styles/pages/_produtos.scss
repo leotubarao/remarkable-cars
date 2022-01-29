@@ -1,0 +1,14 @@
+.ltco_produtos article {
+  .table {
+    td {
+
+      @include media-breakpoint-up(md) {
+        padding-left: 2rem;
+      }
+
+      & + td {
+        border-left: 2px solid rgba(ltco_color(), .06);
+      }
+    }
+  }
+}
