@@ -3,6 +3,7 @@ const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const terser = require('gulp-terser');
 const svgmin = require('gulp-svgmin');
+const gulpReplace = require('gulp-replace');
 const browserSync = require('browser-sync').create();
 
 const packageFile = require('./package');
@@ -94,6 +95,10 @@ function ltco_html() {
 
   return gulp
     .src(srcPath)
+    .pipe(gulpReplace(
+      '%s',
+      isProductionEnviroment ? '/remarkable-cars' : '',
+    ))
     .pipe(gulp.dest(destPath))
     .pipe(browserSync.stream())
 }
