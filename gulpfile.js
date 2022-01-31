@@ -1,10 +1,12 @@
 const gulp = require('gulp');
+const del = require('del');
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const terser = require('gulp-terser');
 const svgmin = require('gulp-svgmin');
 const gulpReplace = require('gulp-replace');
 const browserSync = require('browser-sync').create();
+
 
 const packageFile = require('./package');
 const gulppath = require('./gulppath');
@@ -183,9 +185,14 @@ function watch_everyone() {
 
 gulp.task('watch_everyone', watch_everyone);
 
+gulp.task('clean', function(){
+  return del('public/**', { force: true });
+});
+
 gulp.task(
   'server',
   gulp.series(
+    gulp.parallel('clean'),
     gulp.parallel(tasksArr),
     gulp.parallel(
       'watch_everyone',
@@ -197,11 +204,16 @@ gulp.task(
 gulp.task(
   'dev',
   gulp.series(
+    gulp.parallel('clean'),
     gulp.parallel(tasksArr),
-    gulp.parallel(
-      'watch_everyone'
-    )
+    gulp.parallel('watch_everyone')
   )
 );
 
-gulp.task( 'default', gulp.parallel(tasksArr) );
+gulp.task(
+  'default',
+  gulp.series(
+    gulp.parallel('clean'),
+    gulp.parallel(tasksArr),
+  )
+);

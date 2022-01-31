@@ -24,6 +24,7 @@
     "babel-preset-minify": "^0.5.1",
     "browser-sync": "^2.27.7",
     "cross-env": "^7.0.3",
+    "del": "^6.0.0",
     "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
