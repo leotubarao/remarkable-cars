@@ -133,6 +133,7 @@ function browser() {
 
   const defaultOptions = {
     logPrefix: packageFile.name,
+    open: false,
     server: {
       baseDir: './public',
       serveStaticOptions: {
