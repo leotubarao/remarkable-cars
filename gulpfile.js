@@ -24,12 +24,12 @@ function ltco_styles() {
   const { srcPath, destPath } = gulppath.tasks.ltco_styles;
 
   return gulp
-    .src(srcPath)
+    .src(srcPath, { sourcemaps: !isProductionEnviroment })
     .pipe(sass({
       outputStyle: isProductionEnviroment ? 'compressed' : 'expanded' // expanded / nested / compact / compressed
     }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(destPath))
+    .pipe(gulp.dest(destPath, { sourcemaps: '.' }))
     .pipe(browserSync.stream())
 }
 
@@ -39,7 +39,7 @@ function ltco_scripts() {
   const { srcPath, destPath } = gulppath.tasks.ltco_scripts;
 
   return gulp
-    .src(srcPath, { sourcemaps: true })
+    .src(srcPath, { sourcemaps: !isProductionEnviroment })
     .pipe(terser())
     .pipe(gulp.dest(destPath, { sourcemaps: '.' }))
     .pipe(browserSync.stream())
