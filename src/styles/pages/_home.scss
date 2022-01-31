@@ -86,7 +86,9 @@
   }
 
   .ltco_cta_hero {
+    background-image: url('#{$ltco_path_images}/bg-cta-hero.jpg');
     background-color: ltco_color('gray-700');
+    @extend %backgroundCover;
     height: 50vh;
     min-height: 200px;
 
