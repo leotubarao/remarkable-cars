@@ -1,86 +1,82 @@
-.home {
-  .ltco_triade {
-    > * {
-      justify-content: center;
-
-      @include media-breakpoint-up(lg) {
-        justify-content: space-between;
-      }
-    }
-
-    article {
-      max-width: 380px;
+.ltco_home {
+  .ltco_chioces {
+    .row > * {
+      position: relative;
       display: flex;
       flex-direction: column;
-      position: relative;
+      align-items: center;
 
-      hr {
-        width: 100%;
-        margin-top: auto;
+      @include media-breakpoint-down(lg) {
+        & + * {
+          margin-top: 3rem;
+        }
       }
     }
 
-    &__heading {
-      border-top: 8px solid currentColor;
-      padding-top: 1rem;
-      color: ltco_color('green-300');
+    figure {
+      background-color: ltco_color('gray-500');
+      // background-image: url('#{$ltco_path_images}/sustentability-bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
 
-      &.lighten {
-        color: ltco_color('green-200');
+      @include media-breakpoint-up(sm) {
+        justify-content: initial;
+        min-height: 300px;
       }
 
-      &.darken {
-        color: ltco_color('green-500');
+      @include media-breakpoint-up(xl) {
+        min-height: 400px;
+      }
+
+      figcaption {
+        color: ltco_color('white');
+        max-width: 400px;
+        line-height: 1;
+        @extend .fs-1;
+
+        @include media-breakpoint-only(lg) {
+          font-size: calc(1.5rem + 2.3vw) !important;
+        }
       }
     }
   }
 
-  .ltco_sustentability {
-    background-color: ltco_color('green-500');
-    background-image: url('#{$ltco_path_images}/sustentability-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-
-    @include media-breakpoint-up(lg) {
-      min-height: 400px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      min-height: 500px;
-    }
-
-    > * {
-      margin: auto;
-    }
-
-    &__content {
-      max-width: 450px;
-      padding: 1.5rem 0;
-      color: ltco_color('white');
+  .ltco_cars_highlights {
+    @include media-breakpoint-up(sm) {
       position: relative;
       z-index: 1;
 
-      &:before {
+      &:after {
         content: '';
-        background-color: ltco_color('black');
+        background-color: ltco_color('gray-300');
+        height: 50%;
         position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
         right: 0;
-        opacity: 0.3;
-        filter: blur(40px);
+        z-index: -1;
       }
+    }
+  }
 
-      &__heading,
-      p {
-        color: currentColor;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-      }
+  .ltco_cta_hero {
+    background-color: ltco_color('gray-700');
+    height: 50vh;
+    min-height: 200px;
+
+    * {
+      color: ltco_color('white');
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
   }
 }

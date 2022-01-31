@@ -9,6 +9,10 @@
     border-bottom: 1px solid ltco_color('gray-700');
   }
 
+  .ltco_home & {
+    border-bottom: 1px solid ltco_color('gray-700');
+  }
+
   &__list {
     @extend .list-unstyled;
     margin-bottom: 0;
@@ -34,6 +38,10 @@
       position: relative;
       z-index: 1;
 
+      @include media-breakpoint-between(md, xxl) {
+        width: calc(50% - 41px);
+      }
+
       &:before {
         content: '';
         background-position: center center;
@@ -55,29 +63,32 @@
 
     }
 
-    .ltco_quality_vehicles {
+    .ltco_revised_engines:before {
+      background-image: url('#{$ltco_path_svgs}/icon-revised-engines.svg');
+    }
 
+    .ltco_checked_vehicles:before {
+      background-image: url('#{$ltco_path_svgs}/icon-checked-vehicles.svg');
+    }
+
+    %justifyEnd {
+      @include media-breakpoint-between(md, xxl) {
+        justify-content: flex-end;
+      }
+    }
+
+    .ltco_quality_vehicles {
+      @extend %justifyEnd;
 
       &:before {
         background-image: url('#{$ltco_path_svgs}/icon-quality-vehicles.svg');
       }
     }
-    .ltco_revised_engines {
-      &:before {
-        background-image: url('#{$ltco_path_svgs}/icon-revised-engines.svg');
-      }
-    }
     .ltco_top_quality_service {
-
+      @extend %justifyEnd;
 
       &:before {
         background-image: url('#{$ltco_path_svgs}/icon-top-quality-service.svg');
-      }
-    }
-    .ltco_checked_vehicles {
-
-      &:before {
-        background-image: url('#{$ltco_path_svgs}/icon-checked-vehicles.svg');
       }
     }
 
@@ -90,6 +101,12 @@
 
       @include media-breakpoint-down(md) {
         display: none;
+      }
+
+      @include media-breakpoint-between(md, xxl) {
+        &.this {
+          display: none;
+        }
       }
     }
   }

@@ -1,6 +1,22 @@
 .navbar {
-  .ltco_vehicles & {
-    border-bottom: 1px solid ltco_color('gray-500');
-    margin-bottom: 3rem;
+  @include media-breakpoint-up(sm) {
+    .ltco_vehicles & {
+      border-bottom: 1px solid ltco_color('gray-500');
+      margin-bottom: 3rem;
+    }
+  }
+
+  &-brand img {
+    @include media-breakpoint-down(sm) {
+      max-width: 180px;
+    }
+  }
+
+  &-nav {
+    .nav-link {
+      @include media-breakpoint-up(lg) {
+        margin-right: 1rem;
+      }
+    }
   }
 }
