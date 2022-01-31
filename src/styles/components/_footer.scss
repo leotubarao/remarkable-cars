@@ -1,54 +1,67 @@
 .ltco_footer {
   background-color: ltco_color('tertiary');
 
+  .container {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(3, auto);
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(5, auto);
+    }
+  }
+
   .divisor {
-    background-color: #fff;
+    background-color: ltco_color('white');
     width: 1px;
-    min-height: 100%;
+    min-height: 250px;
     opacity: 0.2;
-    margin-top: 3rem;
+  }
 
-    @include media-breakpoint-down(md) {
-      &.first {
-        display: none;
-      }
-    }
-
-    @include media-breakpoint-down(sm) {
-      &.last {
-        display: none;
-      }
-    }
-
-    @include media-breakpoint-only(xs) {
-      display: none;
+  &__slogan {
+    @include media-breakpoint-between(sm, xl) {
+      grid-column: 1 / 4;
     }
   }
 
-  %centerAllMaxMD {
-    @include media-breakpoint-only(xs) {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  @include media-breakpoint-only(xs) {
-    .row > * + * {
-      margin-top: 3rem;
-    }
-  }
-
-  @include media-breakpoint-only(xs) {
-    &__social .ltco_social {
-      display: table;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &__heading {
-      text-align: center;
+  &__contact {
+    > * {
+      display: flex;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 1;
       color: ltco_color('white');
+      text-decoration: none;
+
+      &:before {
+        content: '';
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    > a {
+      font-weight: 500;
+      align-items: center;
+
+      &:before {
+        background-image: url('#{$ltco_path_svgs}/icon-mail.svg');
+      }
+    }
+
+    address {
+      margin-top: 1rem;
+
+      &:before {
+        background-image: url('#{$ltco_path_svgs}/icon-map-pin.svg');
+      }
     }
   }
 
@@ -61,7 +74,26 @@
         color: ltco_color('white');
         padding-left: 0;
         padding-right: 0;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 500;
         @include transition($transition-base);
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        z-index: 1;
+
+        &:after {
+          content: '';
+          width: 10px;
+          height: 10px;
+          transform: translateX(-6px) rotate(-45deg);
+          background-color: transparent;
+          box-shadow: 3px 3px 0 ltco_color();
+          z-index: -1;
+        }
 
         &:hover {
           transform: translateX(8px);
@@ -71,24 +103,6 @@
           text-align: center;
         }
       }
-    }
-  }
-
-  .ltco_scroll_top {
-    margin: 0 auto;
-
-    @include media-breakpoint-up(sm) {
-      margin-right: 0;
-    }
-  }
-
-  &__copyright {
-    background-color: ltco_color('blue-200');
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
-    .d-flex > * {
-      color: ltco_color('white');
     }
   }
 }
