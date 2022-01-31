@@ -1,2 +1,1 @@
 function ltco_includeHTML(){const t=document.getElementsByTagName("*");for(let e=0;e<t.length;e++){let n=t[e];const o=n.getAttribute("ltco-include-html");if(o){const t=new XMLHttpRequest;return t.onreadystatechange=function(){4==this.readyState&&(200==this.status&&(n.innerHTML=this.responseText),404==this.status&&(n.innerHTML="Page not found."),n.removeAttribute("ltco-include-html"),ltco_includeHTML())},t.open("GET",o,!0),void t.send()}}}ltco_includeHTML();
-//# sourceMappingURL=includehtml.js.map
