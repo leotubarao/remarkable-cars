@@ -41,16 +41,43 @@
 
         <section class="row mt-n5">
           <section class="col-12 col-lg-8 mt-5">
-            <figure>
-              <picture>
-                <source media="(min-width: 1400px)" srcset="https://via.placeholder.com/856x495/27F707/FFF" />
-                <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/736x425/A8D923/FFF" />
-                <source media="(min-width: 992px)" srcset="https://via.placeholder.com/615x355/405407/FFF" />
-                <source media="(min-width: 768px)" srcset="https://via.placeholder.com/700x400/0FBAB4/FFF" />
-                <source media="(min-width: 576px)" srcset="https://via.placeholder.com/515x300/74D4D0/FFF" />
-                <img src="https://via.placeholder.com/535x320/A52CF5/FFF" class="img-fluid" alt="car photo - remarkable cars">
-              </picture>
-            </figure>
+            <div id="carouselCar" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+
+                <div class="active carousel-item">
+                  <picture>
+                    <source media="(min-width: 1400px)" srcset="https://via.placeholder.com/856x495/27F707/FFF" />
+                    <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/736x425/A8D923/FFF" />
+                    <source media="(min-width: 992px)" srcset="https://via.placeholder.com/615x355/405407/FFF" />
+                    <source media="(min-width: 768px)" srcset="https://via.placeholder.com/700x400/0FBAB4/FFF" />
+                    <source media="(min-width: 576px)" srcset="https://via.placeholder.com/515x300/74D4D0/FFF" />
+                    <img src="https://via.placeholder.com/535x320/A52CF5/FFF" class="img-fluid" alt="car photo - remarkable cars">
+                  </picture>
+                </div>
+
+                <div class="carousel-item">
+                  <picture>
+                    <source media="(min-width: 1400px)" srcset="https://via.placeholder.com/856x495/27F707/FFF" />
+                    <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/736x425/A8D923/FFF" />
+                    <source media="(min-width: 992px)" srcset="https://via.placeholder.com/615x355/405407/FFF" />
+                    <source media="(min-width: 768px)" srcset="https://via.placeholder.com/700x400/0FBAB4/FFF" />
+                    <source media="(min-width: 576px)" srcset="https://via.placeholder.com/515x300/74D4D0/FFF" />
+                    <img src="https://via.placeholder.com/535x320/A52CF5/FFF" class="img-fluid" alt="car photo - remarkable cars">
+                  </picture>
+                </div>
+
+              </div>
+
+              <button class="carousel-control-prev" data-bs-target="#carouselCar" type="button" data-bs-slide="prev">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" data-bs-target="#carouselCar" type="button" data-bs-slide="next">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
 
             <div class="ltco_feature_cars d-flex flex-wrap gap-2">
               <span class="badge">122,000km</span>
