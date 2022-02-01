@@ -1,0 +1,54 @@
+.ltco_about {
+  .ltco_wrapper {
+    background-color: ltco_color('tertiary');
+    display: grid;
+    @include make-container-grid-layout();
+
+    &__content {
+      color: ltco_color('white');
+      padding: 3rem 1rem;
+
+      @include media-breakpoint-up(sm) {
+        grid-column: 2 / -2;
+        padding: 3rem 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 5rem;
+        padding-left: 0;
+        grid-column: 2 / 6;
+      }
+
+      > * {
+        max-width: 700px;
+      }
+    }
+
+    &__photo {
+      background-image: url('#{$ltco_path_images}/bg-section-about.jpg');
+      @extend %backgroundCover;
+      min-height: 200px;
+      grid-column: 1 / -1;
+
+      @include media-breakpoint-up(lg) {
+        grid-column: 6 / -1;
+      }
+    }
+  }
+
+  .ltco_buttons {
+    @extend .bg-primary;
+    @extend .py-5;
+
+    .container {
+      @extend .d-flex;
+      @extend .flex-wrap;
+      @extend .justify-content-center;
+      @extend .gap-4;
+
+      .btn {
+        width: 230px;
+      }
+    }
+  }
+}
