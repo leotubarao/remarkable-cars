@@ -34,7 +34,7 @@
   @each $breakpoint, $container-max-width in $max-widths {
     @include media-breakpoint-up($breakpoint, $breakpoints) {
 
-      $calc-container: ($container-max-width / $template-columns);
+      $calc-container: math.div($container-max-width, $template-columns);
 
       grid-template-columns: 1fr repeat($template-columns, $calc-container) 1fr;
     }
