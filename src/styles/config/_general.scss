@@ -156,3 +156,15 @@ main.ltco_main {
 .wp-block-image img {
   @extend .img-fluid;
 }
+
+
+/***  Remove temporary  ***/
+
+.ltco_vehicle .ltco_features {
+  background-color: ltco_color('gray-100');
+}
+
+#financing,
+[href*="#financing"] {
+  display: none;
+}
