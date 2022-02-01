@@ -13,12 +13,16 @@
       }
     }
 
+    *:first-child > figure {
+      background-image: url('#{$ltco_path_images}/bg-section-01.jpg');
+    }
+
+    *:last-child > figure {
+      background-image: url('#{$ltco_path_images}/bg-section-02.jpg');
+    }
+
     figure {
-      background-color: ltco_color('gray-500');
-      // background-image: url('#{$ltco_path_images}/sustentability-bg.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      @extend %backgroundCover;
       width: 100%;
       min-height: 200px;
       display: flex;
